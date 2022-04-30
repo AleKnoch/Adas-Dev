@@ -7,9 +7,12 @@ sangue: logico
 
 inicio
 
-
+//Exemplo de saída para o console
 escreval("Digite seu nome:")
+// Exemplo de entrada do usuário
 leia (nome)
+
+// Demais entradas do usuário
 escreval("Digite seu sobrenome:")
 leia (sobrenome)
 escreval("Qual seu estilo de musica favorito? ")
@@ -19,7 +22,7 @@ leia (animal)
 escreval("É doador de sangue? (verdadeiro ou falso)")
 leia (sangue)
 
-
+//Imprimir dados do usuário de acordo com as respostas
 escreval ("**********Informações do Usuário*******")
 escreval("-Dados Pessoais-")
 escreval("Nome completo: ", nome, " ", sobrenome)
