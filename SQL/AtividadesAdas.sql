@@ -42,7 +42,7 @@ CREATE TABLE funcionario (
 	)
 	
 SELECT * FROM funcionario
-
+-- inserir  novos registros na tabela
 INSERT INTO funcionario(id,nome,salario,departamento) VALUES (1,'Luiz',1500.00,'vendas'),
 (2,'Pedro',1800.00,'compras'),
 (3,'Lucas',1500.00,'RH'),
@@ -72,29 +72,52 @@ SELECT * FROM funcionario order by nome
 --excluir funcionario  inserido atraves do codigo
 DELETE FROM funcionario WHERE id=11
 
+--Ordenação por algum dado
 SELECT * FROM funcionario order by id 
+
+--Ordenação de dado ascendente ou descendente
+SELECT * FROM funcionario order by departamento ASC
+SELECT * FROM funcionario order by departamento DESC
+
 --selecionando todos os funcionarios de um setor
 SELECT * FROM funcionario WHERE departamento = 'Tecnologia'
--- selecionar mais de um departamento in ou or
-SELECT * FROM funcionario WHERE departamento in('Tecnologia','compras')
-SELECT * FROM funcionario WHERE departamento ='Tecnologia'or departamento = 'compras'
+
+-- selecionar mais de um departamento in/ or
+SELECT nome,departamento FROM funcionario WHERE departamento in('Tecnologia','compras')
+SELECT nome,departamento FROM funcionario WHERE departamento ='Tecnologia'or departamento = 'compras'
+
 --selecionar campos especificos da tabela
 SELECT nome,salario FROM funcionario WHERE salario > 2100
+
 --buscar salarios entre faixas de valores 
-SELECT nome,salario FROM funcionario WHERE salario > 2000 and salario <3000
+--Identação 
+SELECT
+	departamento,salario
+FROM 
+	funcionario 
+WHERE 
+	salario > 2000 
+	AND salario <3000
+
 --buscar valores entre intervalos / usado para datas tambem
 SELECT nome,salario FROM funcionario WHERE salario between 1000 and 2000
+
 --selecionar usando or <ou> para buscar informacoes
 SELECT * FROM funcionario WHERE salario < 2000 or departamento='Tecnologia'
+
 --selecionar usando and <e>
 SELECT * FROM funcionario WHERE salario > 2000 and departamento='compras'
+
 --buscar informações que iniciam com uma letra e finaliza em outra
 SELECT nome FROM funcionario WHERE nome like 'P%o'
 
-SELECT * FROM funcionario WHERE departamento='Tecnologia' or departamento='compras'
+--busca informações que contenham "ana" dentro das palavras na tabela
+SELECT nome FROM funcionario WHERE nome ilike '%ana%'
 
-SELECT * FROM funcionario WHERE salario between 1600 and 2800
+--ilike usado para quebrar regra de maiusculo e minusculo, caracteres especiais
+SELECT nome FROM funcionario WHERE nome ilike 'tecnologia'
 
-SELECT * FROM funcionario WHERE nome like '%a'
-
-SELECT * FROM funcionario WHERE id>8
+SELECT * FROM funcionario WHERE departamento like'Tecnologia' or departamento like 'compras'
+and ( salario between 1600 and 2800)
+and  (nome ilike '%a')
+and (id >8)
