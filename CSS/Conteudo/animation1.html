@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /*/
+
+        A animação no CSS precisa ter nome e duração / estiliza 
+
+        /*/
+        @keyframes troca-cor{
+            from{
+                 /*/ no ponto de partida se não alterar nada não será necessário colocar infos /*/
+            }
+            to{
+                background-image: url(chihuahua-capa.jpg);
+                width: 600px;
+                height: 300px;
+                border-bottom-left-radius: 60%;
+               
+            }
+        }
+
+        div{
+            width: 500px;
+            height: 300px;
+            background-image: url(chihuahua-bonito-com-laco-vermelho-e-copia-espaco-fundo_23-2148326280.jpg);
+            margin: auto;
+            margin-top: 100px;
+           
+          
+        }
+
+         /*/
+
+            shorthand tbm é possiel fazer para animation
+
+            /*/
+
+        div{
+            animation: troca-cor 5s alternate;
+        }
+   
+
+        
+    </style>
+
+</head>
+<body>
+
+    <div></div>
+    
+</body>
+</html>
